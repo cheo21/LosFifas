@@ -1,0 +1,4 @@
+baseURL = "https://cheo21.github.io/LosFifas/"
+languageCode = "es"
+title = "Tarjetas FIFA"
+relativeURLs = true

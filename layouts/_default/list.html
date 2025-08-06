@@ -1,0 +1,18 @@
+{{ define "main" }}
+<h1>Tarjetas FIFA</h1>
+
+<div class="cards">
+  {{ range readDir "static/cards" }}
+    {{ if or (in .Name ".png") (in .Name ".jpg") }}
+      <div class="card">
+        <img class="player-img" src="{{ printf "cards/%s" .Name | relURL }}" alt="{{ .Name | replaceRE "\\.(png|jpg)$" "" }}" />
+        <p class="stat">{{ .Name | replaceRE "\\.(png|jpg)$" "" | title }}</p>
+      </div>
+    {{ end }}
+  {{ end }}
+</div>
+
+<style>
+  /* estilos aquí */
+</style>
+{{ end }}
